@@ -6,3 +6,5 @@ app.MapGet("/", () => Results.Ok(new { service = "ActaServer", version = "0.1.0-
 app.MapGet("/api/info", () => Results.Ok(new { service = "ActaServer", version = "0.1.0-stub", environment = "test" }));
 
 app.Run();
+
+public partial class Program { }
