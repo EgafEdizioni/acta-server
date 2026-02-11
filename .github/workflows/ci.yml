@@ -60,6 +60,10 @@ jobs:
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Configure DNS for Harbor
+        run: |
+          echo "46.225.80.160 registry.acta.egaf.it" | sudo tee -a /etc/hosts
+
       - name: Trust Harbor CA
         run: |
           echo "${{ secrets.HARBOR_CA_CERT }}" | sudo tee /usr/local/share/ca-certificates/harbor-ca.crt
